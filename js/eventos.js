@@ -16,7 +16,7 @@ let passwordI = formulario.children[5].value;
 
 let contenedor = document.querySelector("#alumnoIngresado");
 let displayTodos = document.querySelector("#displayTodos");
-let parrafos = displayTodos - getElementsByTagName("p");
+let parrafos = document.getElementsByTagName("p");
 let bandera = false;
 
 miFormulario.addEventListener("submit", agregarAlumnos);
@@ -81,4 +81,4 @@ function MostrarTodosAlumnos(e){
                                     <p><strong>Email: </strong> ${alumno.email} </p>
                                     <p><strong>Password: </strong> ${alumno.password} </p>`
     }
-}
+}  
