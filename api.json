@@ -1,0 +1,45 @@
+[{
+    "precio": 500,
+    "id": 1,
+    "title": "ESMALTE 1L",
+    "thumbnailUrl": ""
+},
+{
+    "precio": 1700,
+    "id": 2,
+    "title": "ESMALTE 4L",
+    "thumbnailUrl": ""
+},
+{
+    "precio": 400,
+    "id": 3,
+    "title": "CIELORRASO 1L",
+    "thumbnailUrl": ""
+},
+{
+    "precio": 1000,
+    "id": 4,
+    "title": "CIELORRASO 4L",
+    "thumbnailUrl":""
+},
+{
+    "precio": 7200,
+    "id": 5,
+    "title": "CIELORRASO 20L",
+    "thumbnailUrl": ""
+},
+{
+    "precio": 900,
+    "id": 6,
+    "title": "EPOXI 1L",
+    "thumbnailUrl": ""
+},
+{
+    "precio": 3200,
+    "id": 6,
+    "title": "EPOXI 4L",
+    "thumbnailUrl": ""
+}
+
+
+]
