@@ -10,6 +10,28 @@
 </head>
 
 <body>
+
+    <div class="conteiner">
+        <h3>Elige la pintura</h3>
+        <button class="btn btn-danger btn-md" id="esmalte">
+            Esmalte
+        </button>
+        <button class="btn btn-danger btn-md" id="cielorraso">
+            Cielorraso
+        </button>
+        <button class="btn btn-danger btn-md" id="epoxi">
+            Epoxi
+        </button>
+        <h3 id="rend"></h3>
+
+
+        <form action="">
+            <label for="">Cantidad de metros a pintar</label>
+            <input type="text" id="cantMetros">
+        </form>
+        <h5 id="cantLitros"> Cantidad de pintura necesaria</h5>
+        <br><br><br><br>
+    </div>  
     <div class="container">
         <h4>Carrito de compras</h4>
         <table class="table">
@@ -75,6 +97,7 @@
     </template>
 
     <script src="./main.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 
 </html>
