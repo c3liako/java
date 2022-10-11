@@ -54,6 +54,7 @@ while (tipo != 4);
 */
 
 /* ----------------------------- CALCULADORA JS ----------------------------- */
+/*
 const esmalte = document.getElementById('esmalte')
 const cielorraso = document.getElementById('cielorraso')
 const epoxi = document.getElementById('epoxi')
@@ -85,7 +86,7 @@ function calculo() {
     cantLitros.innerHTML = ("La cantidad de litros recomendada para dos manos es:",
     rendimiento * cantMetros)
 }
-
+*/
 
 /* --------------------------------- TIENDA --------------------------------- */
 
@@ -242,4 +243,42 @@ const btnAumentarDisminuir = e => {
         pintarCarrito()
     }
     e.stopPropagation()
+}
+
+
+/* ------------------------------- CALCULADORA ------------------------------ */
+const esmalte = document.getElementById('esmalte')
+const cielorraso = document.getElementById('cielorraso')
+const epoxi = document.getElementById('epoxi')
+const rend = document.getElementById('rend')
+const calc = document.getElementById('calc')
+
+
+
+esmalte.addEventListener("click", esmalteClick)
+
+function esmalteClick() {
+    rend.innerHTML = "<h3>Rendimiento: 10 metros cuadrados por mano por litro</h3>"
+    let rendimiento = 10
+}
+
+cielorraso.addEventListener("click", cielorrasoClick)
+
+function cielorrasoClick() {
+    rend.innerHTML = "<h3>Rendimiento: 12 metros cuadrados por mano por litro</h3>"
+    let rendimiento = 12
+}
+
+epoxi.addEventListener("click", epoxiClick)
+
+function epoxiClick() {
+    rend.innerHTML = "<h3>Rendimiento: 8 metros cuadrados por mano por litro</h3>"
+    let rendimiento = 8
+}
+
+
+calc.addEventListener("click", calcClick)
+
+function calcClick() {
+
 }
