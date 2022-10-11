@@ -1,5 +1,5 @@
 /* ------------------------------- CALCULADORA ------------------------------ */
-
+/*
 var esmalte = {
     tipo: 1,
     rendimiento: 8,
@@ -51,6 +51,41 @@ do {
     }
 }
 while (tipo != 4);
+*/
+
+/* ----------------------------- CALCULADORA JS ----------------------------- */
+const esmalte = document.getElementById('esmalte')
+const cielorraso = document.getElementById('cielorraso')
+const epoxi = document.getElementById('epoxi')
+const rend = document.getElementById('rend')
+const cantMetros = document.getElementById('cantMetros')
+const cantLitros = document.getElementById('cantLitros')
+
+
+
+esmalte.addEventListener("click", esmalteClick)
+function esmalteClick() {
+    rend.innerHTML = "<h3>Rendimiento: 10 metros cuadrados por mano por litro</h3>"
+    let rendimiento = 10
+}
+
+cielorraso.addEventListener("click", cielorrasoClick)
+function cielorrasoClick() {
+    rend.innerHTML = "<h3>Rendimiento: 12 metros cuadrados por mano por litro</h3>"
+    let rendimiento = 12
+}
+
+epoxi.addEventListener("click", epoxiClick)
+function epoxiClick() {
+    rend.innerHTML = "<h3>Rendimiento: 8 metros cuadrados por mano por litro</h3>"
+    let rendimiento = 8
+}
+cantMetros(calculo )
+function calculo() {
+    cantLitros.innerHTML = ("La cantidad de litros recomendada para dos manos es:",
+    rendimiento * cantMetros)
+}
+
 
 /* --------------------------------- TIENDA --------------------------------- */
 
@@ -63,17 +98,21 @@ const templateCarrito = document.getElementById('template-carrito').content
 const fragment = document.createDocumentFragment()
 let carrito = {}
 
- /* --------------------------------- EVENTOS -------------------------------- */
-document.addEventListener('DOMContentLoaded', e => { 
+/* --------------------------------- EVENTOS -------------------------------- */
+document.addEventListener('DOMContentLoaded', e => {
     fetchData()
     /* --------------------------- LOCAL STORAGE CHECK -------------------------- */
-    if(localStorage.getItem('carrito')) {
+    if (localStorage.getItem('carrito')) {
         carrito = JSON.parse(localStorage.getItem('carrito'))
         pintarCarrito()
     }
 });
-cards.addEventListener('click', e => { addCarrito(e) });
-items.addEventListener('click', e => { btnAumentarDisminuir(e) })
+cards.addEventListener('click', e => {
+    addCarrito(e)
+});
+items.addEventListener('click', e => {
+    btnAumentarDisminuir(e)
+})
 
 /* ----------------------------- TRAER PRODUCTOS ---------------------------- */
 const fetchData = async () => {
@@ -114,8 +153,10 @@ const setCarrito = item => {
         producto.cantidad = carrito[producto.id].cantidad + 1
     }
 
-    carrito[producto.id] = { ...producto }
-    
+    carrito[producto.id] = {
+        ...producto
+    }
+
     pintarCarrito()
 }
 
@@ -127,7 +168,7 @@ const pintarCarrito = () => {
         templateCarrito.querySelectorAll('td')[0].textContent = producto.title
         templateCarrito.querySelectorAll('td')[1].textContent = producto.cantidad
         templateCarrito.querySelector('span').textContent = producto.precio * producto.cantidad
-        
+
         /* --------------------------------- BOTONES -------------------------------- */
         templateCarrito.querySelector('.btn-info').dataset.id = producto.id
         templateCarrito.querySelector('.btn-danger').dataset.id = producto.id
@@ -145,17 +186,22 @@ const pintarCarrito = () => {
 
 const pintarFooter = () => {
     footer.innerHTML = ''
-    
+
     if (Object.keys(carrito).length === 0) {
         footer.innerHTML = `
         <th scope="row" colspan="5">Carrito vacío</th>
         `
         return
     }
-    
-/* --------------------- SUMAR CANTIDAD Y SUMAR TOTALES --------------------- */
-    const nCantidad = Object.values(carrito).reduce((acc, { cantidad }) => acc + cantidad, 0)
-    const nPrecio = Object.values(carrito).reduce((acc, {cantidad, precio}) => acc + cantidad * precio ,0)
+
+    /* --------------------- SUMAR CANTIDAD Y SUMAR TOTALES --------------------- */
+    const nCantidad = Object.values(carrito).reduce((acc, {
+        cantidad
+    }) => acc + cantidad, 0)
+    const nPrecio = Object.values(carrito).reduce((acc, {
+        cantidad,
+        precio
+    }) => acc + cantidad * precio, 0)
 
     templateFooter.querySelectorAll('td')[0].textContent = nCantidad
     templateFooter.querySelector('span').textContent = nPrecio
@@ -177,7 +223,9 @@ const btnAumentarDisminuir = e => {
     if (e.target.classList.contains('btn-info')) {
         const producto = carrito[e.target.dataset.id]
         producto.cantidad++
-        carrito[e.target.dataset.id] = { ...producto }
+        carrito[e.target.dataset.id] = {
+            ...producto
+        }
         pintarCarrito()
     }
 
@@ -187,7 +235,9 @@ const btnAumentarDisminuir = e => {
         if (producto.cantidad === 0) {
             delete carrito[e.target.dataset.id]
         } else {
-            carrito[e.target.dataset.id] = {...producto}
+            carrito[e.target.dataset.id] = {
+                ...producto
+            }
         }
         pintarCarrito()
     }
