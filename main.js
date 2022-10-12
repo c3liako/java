@@ -1,92 +1,3 @@
-/* ------------------------------- CALCULADORA ------------------------------ */
-/*
-var esmalte = {
-    tipo: 1,
-    rendimiento: 8,
-    precio: 100,
-};
-
-var cieloRaso = {
-    tipo: 2,
-    rendimiento: 10,
-    precio: 200,
-};
-
-var epoxi = {
-    tipo: 3,
-    rendimiento: 6,
-    precio: 300,
-};
-
-function cantLitros(superficie, rendimiento) {
-    return superficie / rendimiento
-};
-
-do {
-    tipo = prompt("Elige una opcion: \n1. Esmalte \n2. CieloRaso \n3. Epoxi  \n4. Seguir a la tienda");
-
-    if (tipo == 1) {
-        alert("El rendimiento por litro son 8 metros cuadrados");
-        rendimiento = esmalte.rendimiento
-        superficie = prompt("Ingrese la cantidad de metros cuadrados que desea pintar")
-        alert("La cantidad de litros nescesaria seran: " + cantLitros(superficie, rendimiento) + " L")
-
-    } else if (tipo == 2) {
-        alert("El rendimiento por litro son 10 metros cuadrados");
-        rendimiento = cieloRaso.rendimiento
-        superficie = prompt("Ingrese la cantidad de metros cuadrados que desea pintar")
-        alert("La cantidad de litros nescesaria seran: " + cantLitros(superficie, rendimiento) + " L")
-
-
-    } else if (tipo == 3) {
-        alert("El rendimiento por litro son 6 metros cuadrados");
-        rendimiento = epoxi.rendimiento
-        superficie = prompt("Ingrese la cantidad de metros cuadrados que desea pintar")
-        alert("La cantidad de litros nescesaria seran: " + cantLitros(superficie, rendimiento) + " L")
-
-    } else if (tipo == 4) {
-        break;
-    } else {
-        alert("La opcion no es valida");
-    }
-}
-while (tipo != 4);
-*/
-
-/* ----------------------------- CALCULADORA JS ----------------------------- */
-/*
-const esmalte = document.getElementById('esmalte')
-const cielorraso = document.getElementById('cielorraso')
-const epoxi = document.getElementById('epoxi')
-const rend = document.getElementById('rend')
-const cantMetros = document.getElementById('cantMetros')
-const cantLitros = document.getElementById('cantLitros')
-
-
-
-esmalte.addEventListener("click", esmalteClick)
-function esmalteClick() {
-    rend.innerHTML = "<h3>Rendimiento: 10 metros cuadrados por mano por litro</h3>"
-    let rendimiento = 10
-}
-
-cielorraso.addEventListener("click", cielorrasoClick)
-function cielorrasoClick() {
-    rend.innerHTML = "<h3>Rendimiento: 12 metros cuadrados por mano por litro</h3>"
-    let rendimiento = 12
-}
-
-epoxi.addEventListener("click", epoxiClick)
-function epoxiClick() {
-    rend.innerHTML = "<h3>Rendimiento: 8 metros cuadrados por mano por litro</h3>"
-    let rendimiento = 8
-}
-cantMetros(calculo )
-function calculo() {
-    cantLitros.innerHTML = ("La cantidad de litros recomendada para dos manos es:",
-    rendimiento * cantMetros)
-}
-*/
 
 /* --------------------------------- TIENDA --------------------------------- */
 
@@ -250,35 +161,23 @@ const btnAumentarDisminuir = e => {
 const esmalte = document.getElementById('esmalte')
 const cielorraso = document.getElementById('cielorraso')
 const epoxi = document.getElementById('epoxi')
-const rend = document.getElementById('rend')
-const calc = document.getElementById('calc')
-
-
 
 esmalte.addEventListener("click", esmalteClick)
 
 function esmalteClick() {
-    rend.innerHTML = "<h3>Rendimiento: 10 metros cuadrados por mano por litro</h3>"
-    let rendimiento = 10
+    swal.fire('Rinde 12 metros cuadrados por mano por litro')
 }
 
 cielorraso.addEventListener("click", cielorrasoClick)
 
 function cielorrasoClick() {
-    rend.innerHTML = "<h3>Rendimiento: 12 metros cuadrados por mano por litro</h3>"
-    let rendimiento = 12
+    swal.fire('Rinde 10 metros cuadrados por mano por litro')
 }
 
 epoxi.addEventListener("click", epoxiClick)
 
 function epoxiClick() {
-    rend.innerHTML = "<h3>Rendimiento: 8 metros cuadrados por mano por litro</h3>"
-    let rendimiento = 8
+    swal.fire('Rinde 8 metros cuadrados por mano por litro')
 }
 
 
-calc.addEventListener("click", calcClick)
-
-function calcClick() {
-
-}
